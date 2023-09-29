@@ -6,15 +6,15 @@
 ;Exercise 0
 ;Write 5 expressions whose values are the number ten:
 ;1. Atom
-
+10
 ;2. Compound Expression (3 Atoms)
-
+(+ 3 7)
 ;3. Compound Expression (4 Atoms)
-
+(+ 2 2 6)
 ;4. Compound Expression (1 Atom and 2 subexpressions)
-
+(+ (* 1 4) (* 2 3))
 ;5. Any Other Kind Expression
-
+(- 20 (* 2 5))
 
 ;Exercise 1
 (define (second wd)
@@ -22,8 +22,8 @@
 
 ;1. Define first-two
 (define (first-two wd)
-  ; your code here
-  (error "Not yet implemented")
+  (word (first wd) (second wd))
+  ; (error "Not yet implemented")
 )
 
 ;;2. Define two-first

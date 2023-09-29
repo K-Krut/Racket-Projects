@@ -40,20 +40,18 @@ This is a comment that spans multiple lines.
   (+ (square a) (square b)))
 
 ;; Exercise 2a - Define can-drive
-(define legal-driving-age 18)
 (define (can-drive age)
-  (if (< age legal-driving-age)
+  (if (< age 16)
       '(Not yet)
       '(Good to go)))
 
 
 ;; Exercise 2b - Define fizzbuzz
 (define (fizzbuzz num)
-  (cond 
-    ((and (= (remainder num 3) 0) (= (remainder num 5) 0)) "fizzbuzz")
-    ((= (remainder num 3) 0) "fizz")
-    ((= (remainder num 5) 0) "buzz")
-    (else num)))
+  (cond ((and (= (remainder num 3) 0) (= (remainder num 5) 0)) 'fizzbuzz)
+         ((= (remainder num 3) 0) 'fizz)
+         ((= (remainder num 5) 0) 'buzz)
+         (else num)))
 
 ;; Exercise 3 - Why did the Walrus cross the Serengeti?
 
