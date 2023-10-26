@@ -1,8 +1,15 @@
 #lang racket
 
+
+;; ТІ-01 Круть Катерина Олександрівна
+
+
+
 ;; (require berkeley)
 (require (planet dyoo/simply-scheme))
 (provide (all-defined-out))
+
+
 
 ;Exercise 0
 ;Write 5 expressions whose values are the number ten:
@@ -11,7 +18,7 @@
 ;2. Compound Expression (3 Atoms)
 (+ 6 4)
 ;3. Compound Expression (4 Atoms)
-(+ 6 3 1)
+(+ 6 3 1 4)
 ;4. Compound Expression (1 Atom and 2 subexpressions)
 (+ (* 2 2) (* 3 2))
 ;5. Any Other Kind Expression
@@ -89,10 +96,7 @@
 (define (superlative adjective wd)
   (se (word adjective 'est) wd))
 
-#|
-
-Explanation here.
-The built-in procedure "word" has been replaced with whatever was passed as the second
-argument to "superlative". Thus, the "word" built-in is no longer available within the
-scope of the procedure. Change the "word" variable in the superlative procedure to fix
+#| Вбудована процедура "word" замінюється на другий аргумент функції.
+Отже, процедура "word" стає недоступною у межах цієї функції.
+Потрібно замінити змінну "word" у функції (процедурі) superlative, щоб виправити помилку
 |#
