@@ -1,5 +1,10 @@
 #lang racket
 
+
+;; ТІ-01 Круть Катерина Олександрівна
+
+
+
 (require (planet dyoo/simply-scheme))
 (require math/number-theory)
 (provide (all-defined-out))
