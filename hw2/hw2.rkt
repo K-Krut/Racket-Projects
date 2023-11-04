@@ -5,7 +5,6 @@
 
 
 ; Exercise 1 - Define substitute
-
 (define (substitute sent old-word new-word)
   ; Your code here
   (map (lambda (word)
@@ -46,56 +45,85 @@
 -> returns: 8
 
 (try word)
--> returns: word: unbound identifier in: word
+-> returns: 35
 |#
 
 
 ; Exercise 3
 #|
-
-Number of arguments g has:
-
-Type of value returned by g:
+процедура g - приймає іншу процедуру
+Number of arguments g has: 0
+Type of value returned by g: функція
 
 |#
 
 ; Exercise 4 - Define f1, f2, f3, f4, and f5
-
-; Exercise 5 - Try out the expressions
-
-(define (t f)
-  (lambda (x) (f (f (f x)))) )
-
 #|
-1. ((t add1) 0) returns:
+ For each expression, give a definition of f such that evaluating the expression will not
+cause an error, and say what the expression's value will be, given your definition.
+To be clear, for number one, define f1, for number 2, define f2, etc.
 
-2. ((t (t add1)) 0) returns:
-
-3. (((t t) add1) 0) returns:
+f1
+(f2)
+(f3 3)
+((f4))
+(((f5)) 3)
 
 |#
 
-; Exercise 6 - Try out the expressions
+(define f1 2)
+;; -> f1
+;; -> returns: 2
 
+(define f2 +)
+;; -> (f2)
+;; -> returns:  #<procedure
+
+(define (f3 x) (* x x))
+;; -> (f3 3)
+;; -> returns: 9
+
+(define f4 (lambda () (lambda () (* 4 4))))
+;; -> ((f4))
+;; -> returns: 16
+
+(define f5 (lambda () (lambda () (lambda (x) (* x x)))))
+;; -> (((f5)) 5)
+;; -> returns: 25
+
+
+; Exercise 5 - Try out the expressions
+(define (t f)
+  (lambda (x) (f (f (f x)))) )
+#|
+1. ((t add1) 0) returns: 3
+2. ((t (t add1)) 0) returns: 9
+3. (((t t) add1) 0) returns: 27
+|#
+
+
+; Exercise 6 - Try out the expressions
 (define (s x)
   (+ 1 x))
 
 #|
-
-1. ((t s) 0) returns:
-
-2. ((t (t s)) 0) returns:
-
-3. (((t t) s) 0) returns:
-
+1. ((t s) 0) returns: 3
+2. ((t (t s)) 0) returns: 9
+3. (((t t) s) 0) returns: 27
 |#
 
 ; Exercise 7 - Define make-tester
-
+#|
+Write and test the make-tester procedure. Given a word w as its argument,
+make-tester returns a procedure of one argument x that returns true if x is equal to w and false otherwise.
+|#
 (define (make-tester wd)
   ; Your code here
-  (error "Not yet implemented")
-)
+  (lambda (x)
+    (equal? x wd)))
+
+
+
 
 ; Exercise 8 - SICP exercises
 
