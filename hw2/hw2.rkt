@@ -8,42 +8,45 @@
 
 (define (substitute sent old-word new-word)
   ; Your code here
-  (error "Not yet implemented")
-)
+  (map (lambda (word)
+         (if (equal? word old-word)
+             new-word
+             word))
+       sent))
 
 
 ; Exercise 2 - Try out the expressions!
 
 #|
 (lambda (x) (+ x 3))
--> returns:
+-> returns: #<procedure>
 
 ((lambda (x) (+ x 3)) 7)
--> returns:
+-> returns: 10
 
 (define (make-adder num)
   (lambda (x) (+ x num)))
 ((make-adder 3) 7)
--> returns:
+-> returns: 10
 
 (define plus3 (make-adder 3))
 (plus3 7)
--> returns:
+-> returns: 10
 
 (define (square x) (* x x))
 (square 5)
--> returns:
+-> returns: 25
 
 (define square (lambda (x) (* x x)))
 (square 5)
--> returns
+-> returns 25
 
 (define (try f) (f 3 5))
 (try +)
--> returns:
+-> returns: 8
 
 (try word)
--> returns:
+-> returns: word: unbound identifier in: word
 |#
 
 
